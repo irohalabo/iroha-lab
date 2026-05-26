@@ -1,72 +1,157 @@
-/* 全体のリセットと背景色の設定 */
+/* ========================================================
+   全体の基本設定
+======================================================== */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #0d1b2a; /* 画面全体の背景を暗い紺色に */
-    color: #ffffff;           /* 画面全体の文字を「白」に統一 */
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    background-color: #0b132b; /* 深みのあるスタイリッシュなダークネイビー */
+    color: #ffffff;
+    line-height: 1.8;
 }
 
-/* ヘッダー（一番上のメニューバー） */
+/* リンク（青い下線）の見た目を綺麗にする */
+a {
+    color: #4ea8de;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: #64dfdf;
+}
+
+/* ========================================================
+   1. ヘッダー（一番上のメニュー）
+======================================================== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #0b1520;
+    padding: 20px 5%;
+    background-color: rgba(11, 19, 43, 0.85); /* 高級感のある半透明 */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header h1 {
     margin: 0;
-    color: #ffffff !important; /* ロゴの文字を白にする */
-    font-size: 24px;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
-header nav a {
-    color: #ffffff !important; /* メニューの文字を白にする */
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-/* 無料相談ボタン */
-.btn-blue {
-    background-color: #00b4d8;
-    color: #ffffff !important;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* メインビジュアル（中央の大きな紺色のエリア） */
+/* ========================================================
+   2. メインビジュアル（一番上の目立つ場所）
+======================================================== */
 .hero, .main-visual {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    padding: 120px 20px;
+    background: radial-gradient(circle at top, #1c2541 0%, #0b132b 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .hero h1, .main-visual h1 {
-    font-size: 42px;
-    color: #ffffff !important; /* 中央の大きな「いろはラボ」の文字を白にする */
-    margin-bottom: 20px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
 }
 
 .hero p, .main-visual p {
-    font-size: 18px;
-    color: #e0e1dd !important; /* キャッチコピーの文字を明るいグレー（白に近い色）にする */
-    margin-bottom: 40px;
+    font-size: 16px;
+    color: #cbd5e1; /* 読みやすい明るいグレー */
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
-/* フッター（一番下のリンクがたくさんある場所） */
+/* ========================================================
+   3. サービス案内（つまらない画面を劇的に変える場所）
+======================================================== */
+.services-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 50px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+/* タイトルの下に引くオシャレな線 */
+.services-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #00b4d8;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* 「個人向け」「企業向け」を綺麗に整えるボックス（カード） */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card, .personal-section, .business-section, .supporter-section {
+    background-color: #1c2541; /* 立体感を出すための少し明るい箱 */
+    padding: 40px 30px;
+    border-radius: 12px; /* 角を丸くして今風のデザインに */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* マウスを乗せるとフワッと浮き上がる演出 */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 180, 216, 0.15);
+    border-color: rgba(0, 180, 216, 0.3);
+}
+
+.service-card h3, h3 {
+    font-size: 20px;
+    color: #00b4d8; /* 見出しを綺麗なシアンブルーに */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* 詳しく見る → のリンクをオシャレな「ボタン」に変身させる */
+.more-link, a[href*="詳しく見る"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    background-color: transparent;
+    color: #00b4d8 !important;
+    border: 2px solid #00b4d8;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.more-link:hover, a[href*="詳しく見る"]:hover {
+    background-color: #00b4d8;
+    color: #ffffff !important;
+}
+
+/* ========================================================
+   4. フッター（一番下の黒い部分）
+======================================================== */
 footer {
-    background-color: #0b1520;
+    background-color: #080f21;
     padding: 40px 20px;
     text-align: center;
-}
-
-.footer-links a {
-    color: #ffffff !important; /* 下部メニューの文字を白にする */
-    text-decoration: none;
-    margin: 0 15px;
     font-size: 14px;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
