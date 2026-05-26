@@ -33,7 +33,7 @@ header {
 header h1.logo {
     font-size: 22px;
     font-weight: bold;
-    white-space: nowrap; /* 文字の折り返しを防ぐ */
+    white-space: nowrap;
 }
 
 header nav {
@@ -46,7 +46,7 @@ header nav a {
     text-decoration: none;
     margin-left: 20px;
     font-size: 14px;
-    white-space: nowrap; /* 文字が途中で切れるのを防ぐ */
+    white-space: nowrap;
     transition: color 0.3s;
 }
 
@@ -54,7 +54,6 @@ header nav a:hover {
     color: #00b4d8;
 }
 
-/* 無料相談ボタン（絶対に形が崩れないように設定） */
 header nav a.btn-blue {
     background-color: #00b4d8;
     color: #ffffff !important;
@@ -65,11 +64,7 @@ header nav a.btn-blue {
     text-align: center;
 }
 
-header nav a.btn-blue:hover {
-    background-color: #0096c7;
-}
-
-/* メインビジュアル（中央寄せ） */
+/* メインビジュアル */
 .main-visual {
     padding: 120px 24px;
     background: radial-gradient(circle at top, #1c2541 0%, #0b132b 100%);
@@ -104,7 +99,7 @@ header nav a.btn-blue:hover {
     text-decoration: none;
 }
 
-/* コンテナ設定（文章の長さを綺麗に揃える幅制限） */
+/* コンテナ設定 */
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -136,7 +131,7 @@ h2::after {
     font-size: 16px;
 }
 
-/* サービスカード（グリッド配置） */
+/* サービスカード設定 */
 .service-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -163,7 +158,6 @@ h2::after {
     font-size: 15px;
     color: #e2e8f0;
     margin-bottom: 24px;
-    text-align: justify; /* 両端揃えでプロっぽく見せる */
 }
 
 .more-link {
@@ -175,54 +169,166 @@ h2::after {
     border-radius: 4px;
     font-weight: bold;
     font-size: 14px;
+}
+
+/* ========================================================
+   💰 料金プラン（お金のこと）のプロ仕様デザイン
+======================================================== */
+.price-section {
+    background-color: #080f21; /* 背景を交互に変えてメリハリを出す */
+}
+
+.price-sub {
+    margin-bottom: 48px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* スマホで縦並びにする設定 */
+}
+
+.price-card {
+    background-color: #1c2541;
+    padding: 40px 32px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* 目立たせたい企業向けプランの枠を光らせる */
+.price-card.premium {
+    border: 2px solid #00b4d8;
+    box-shadow: 0 8px 24px rgba(0, 180, 216, 0.2);
+}
+
+.plan-tag {
+    display: inline-block;
+    background-color: #3a86ff;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.plan-tag.gold {
+    background-color: #ffb703;
+    color: #023047;
+}
+
+.price-card h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.price-amount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00b4d8;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+
+.price-amount span {
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+.price-card ul {
+    text-align: left;
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.price-card ul li {
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* リストの先頭に「チェックマーク」をつけるオシャレ演出 */
+.price-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00b4d8;
+    font-weight: bold;
+}
+
+.btn-price {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
     transition: all 0.3s;
 }
 
-.more-link:hover {
+.btn-price:hover {
+    background-color: #ffffff;
+    color: #0b132b;
+}
+
+.btn-price.highlight {
     background-color: #00b4d8;
-    color: #ffffff !important;
+    border-color: #00b4d8;
+    color: #ffffff;
+}
+
+.btn-price.highlight:hover {
+    background-color: #0096c7;
+    border-color: #0096c7;
 }
 
 /* フッター */
 footer {
-    background-color: #080f21;
+    background-color: #050a14;
     text-align: center;
     padding: 32px 24px;
     font-size: 14px;
     color: #64748b;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ========================================================
-   📱 スマートフォン画面専用の崩れ防止設定
+   📱 スマートフォン画面専用設定
 ======================================================== */
 @media (max-width: 600px) {
-    /* スマホではヘッダーの要素を上下2段にしてボタンの破裂を防ぐ */
     .header-container {
         flex-direction: column;
         gap: 12px;
         padding: 16px 12px;
     }
-    
     header nav {
         width: 100%;
         justify-content: center;
     }
-    
     header nav a {
         margin: 0 8px;
         font-size: 13px;
     }
-    
-    header nav a.btn-blue {
-        padding: 6px 12px; /* スマホ用に少しコンパクトにして綺麗に収める */
-    }
-
-    .main-visual {
-        padding: 80px 16px;
-    }
-
     .main-visual h1 {
         font-size: 26px;
+    }
+    .price-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .price-card {
+        width: 100%;
     }
 }
