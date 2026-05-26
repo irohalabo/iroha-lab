@@ -3,103 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>いろはラボ</title>
+    <title>いろはラボ - あなたの「働く」と「生きる」をデザインする場所</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <div class="header-container">
-            <h1 class="logo">いろはラボ</h1>
-            <nav>
-                <a href="#about">私たちについて</a>
-                <a href="#services">サービス案内</a>
-                <a href="#price">料金プラン</a>
-                <a href="#contact" class="btn-blue">無料相談</a>
+            <div class="header-logo">
+                <a href="#">いろはラボ</a>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#services">サービス案内</a></li>
+                    <li><a href="#voices">実績・参加者の声</a></li>
+                    <li><a href="#strengths">いろはラボの強み</a></li>
+                    <li><a href="#flow">ご利用の流れ</a></li>
+                </ul>
             </nav>
+            <div class="header-cta">
+                <a href="#contact" class="btn-header-cta">無料相談はこちら</a>
+            </div>
         </div>
     </header>
 
-    <section class="main-visual">
-        <div class="main-visual-content">
-            <h1>もっと豊かにデザインする場所。</h1>
-            <p>いろはラボは、あなたの理想を形にするクリエイティブパートナーです。最先端の技術とデザインで、新しい価値を共に創り出します。</p>
-            <a href="#services" class="btn-main">サービスを見る</a>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <div class="section-container">
-            <h2>私たちについて</h2>
-            <p class="center-text">いろはラボは、一人ひとりの可能性を広げ、未来をより豊かにデザインするためのクリエイティブな空間です。初心者からプロフェッショナルを目指す方まで、それぞれの目標に合わせた最適なサポートを提供します。私たちは、技術を学ぶだけでなく、それをどう活かすかという『想い』を大切にしています。</p>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="section-container">
-            <h2>提供サービス</h2>
-            <div class="service-container">
-                
-                <div class="service-card">
-                    <h3>個人向けサービス</h3>
-                    <p>ライフスタイルに合わせた個別カリキュラムで、あなたの「学びたい」を徹底サポートします。パソコンの基本操作から、プログラミング、デザインまで、初心者でも安心してスキルを身につけられます。</p>
-                    <a href="#" class="more-link">詳しく見る →</a>
-                </div>
-
-                <div class="service-card">
-                    <h3>企業向けサービス</h3>
-                    <p>業務効率化や新規事業立ち上げのための、最適なソリューションとデジタルインフラをご提案。研修プログラムの提供やシステム開発など、確実な成果へと導くパートナーシップを築きます。</p>
-                    <a href="#" class="more-link">詳しく見る →</a>
-                </div>
-
-                <div class="service-card">
-                    <h3>サポーター募集</h3>
-                    <p>いろはラボの理念に共感し、共に未来を創るサポーターを募集しています。コミュニティを通じて、新しい繋がりと挑戦の場を提供し、共に成長していく仲間をいつでもお待ちしています。</p>
-                    <a href="#" class="more-link">詳しく見る →</a>
-                </div>
-
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">
+                    あなたの「働く」と「生きる」を、<br>
+                    もっと豊かにデザインする場所。
+                </h1>
+                <p class="hero-subtitle">
+                    いろはラボは、一人ひとりのキャリアの可能性を広げ、<br>
+                    共に学び、未来を切り拓く創造的なコミュニティです。
+                </p>
+            </div>
+            <div class="hero-actions fade-in-up delay-1">
+                <a href="#personal" class="btn btn-primary">
+                    <span class="btn-target">個人の方へ</span>
+                    <span class="btn-text">キャリア相談・学びの場を見る</span>
+                </a>
+                <a href="#corporate" class="btn btn-secondary">
+                    <span class="btn-target">企業の方へ</span>
+                    <span class="btn-text">人材育成・研修を相談する</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="price" class="price-section">
-        <div class="section-container">
-            <h2>料金プラン（お金のこと）</h2>
-            <p class="center-text price-sub">わかりやすくシンプルな料金体系で、あなたのスタートを応援します。</p>
-            
-            <div class="price-container">
-                
-                <div class="price-card">
-                    <span class="plan-tag">個人向け</span>
-                    <h3>スタンダードプラン</h3>
-                    <div class="price-amount">¥11,000<span> / 月</span></div>
-                    <ul>
-                        <li>月4回の個別マンツーマン学習</li>
-                        <li>チャットでの質問相談し放題</li>
-                        <li>オリジナル教材へのアクセス</li>
-                    </ul>
-                    <a href="#contact" class="btn-price">申し込む</a>
-                </div>
-
-                <div class="price-card premium">
-                    <span class="plan-tag gold">企業向け</span>
-                    <h3>ビジネスプラン</h3>
-                    <div class="price-amount">¥55,000<span> / 月〜</span></div>
-                    <ul>
-                        <li>御社専用のオーダーメイド研修</li>
-                        <li>月2回の対面またはオンラインMTG</li>
-                        <li>業務効率化システムの構築相談</li>
-                    </ul>
-                    <a href="#contact" class="btn-price highlight">相談してみる</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 いろはラボ All Rights Reserved.</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
