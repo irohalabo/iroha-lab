@@ -1,0 +1,857 @@
+/* ==========================================================================
+   全般的なリセットと基本設定
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #ffffff;
+    background-color: #0a192f; /* ベースの深いネイビー */
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   メインビジュアル（モデルB：モダン・グラデーション）
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* 画面全体の高さ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    /* 知的なネイビーから鮮やかなブルー、深い紫へ流れるグラデーション */
+    background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 50%, #4c1d95 100%);
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+/* テキストレイアウト（わかりやすさの徹底） */
+.hero-content {
+    margin-bottom: 48px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 文字の輪郭をはっきりさせて視認性を向上 */
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #e2e8f0; /* 少し柔らかい白で可読性を担保 */
+    line-height: 1.8;
+}
+
+/* 2方向並列CTAボタンの導線設計 */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+    max-width: 100%;
+    padding: 18px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+
+.btn strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* 個人向けボタン：ワクワクを促すアクセントカラー（鮮やかなシアンブルー） */
+.btn-primary {
+    background-color: #00d2ff;
+    color: #0a192f;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 210, 255, 0.4);
+}
+
+/* 企業向けボタン：知的で洗練された白ベース（透過型枠線） */
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #0a192f;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   アニメーション用の設定
+   ========================================================================== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.fade-in-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.3s; /* ボタンを少し遅らせて出現させる */
+}
+
+/* ==========================================================================
+   レスポンシブ対応（スマホ画面用の最適化）
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.0rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   サービス案内セクション（カードレイアウト）
+   ========================================================================== */
+.services-section {
+    padding: 100px 20px;
+    background-color: #0d1e3d; /* メインビジュアルから続く、少しだけ明るいネイビー */
+    text-align: center;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+/* サービスを横並びにするグリッド（スマホ時は自動で縦並びになります） */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+/* すっきり見せる角丸のカードデザイン */
+.service-card {
+    background-color: rgba(255, 255, 255, 0.05); /* 半透明の薄い白 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #00d2ff; /* ホバー時にシアンブルーに光る演出 */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1; /* 読みやすい少しグレーがかった白 */
+    line-height: 1.6;
+    margin-bottom: 24px;
+    min-height: 72px; /* カードの高さを統一するための設定 */
+}
+
+.service-link {
+    color: #00d2ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-link {
+    color: #ffffff;
+}
+
+/* アニメーション用の追加遅延 */
+.delay-2 { transition-delay: 0.5s; }
+.delay-3 { transition-delay: 0.7s; }
+
+
+/* ==========================================================================
+   実績・利用者の声セクション
+   ========================================================================== */
+.testimonials-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #0d1e3d 0%, #0a192f 100%); /* 緩やかに元の深いネイビーに戻る */
+}
+
+.testimonials-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 左右を2分割にするレイアウト（スマホ時は自動で縦並びになります） */
+.testimonials-flex {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+/* 左側：実績数値ボックス */
+.stats-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.stats-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+    color: #ffffff;
+    text-align: left;
+    border-left: 4px solid #00d2ff; /* 知的なシアンブルーのアクセント線 */
+    padding-left: 12px;
+}
+
+.stat-item {
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.stat-item:last-child {
+    margin-bottom: 0;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #00d2ff; /* 数字を目立たせる */
+    line-height: 1;
+}
+
+.stat-unit {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-left: 4px;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-top: 4px;
+}
+
+/* 右側：吹き出し風の利用者の声 */
+.voices-box {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.voice-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quote-mark {
+    font-size: 3rem;
+    font-family: Georgia, serif;
+    color: rgba(0, 210, 255, 0.3); /* 引用符をデザインのアクセントに */
+    line-height: 1;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.voice-text {
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    padding-left: 24px;
+    text-align: left;
+}
+
+/* もっと見るリンクボタン */
+.more-link-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-more {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 2px solid #00d2ff;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+    color: #00d2ff;
+    border-bottom-color: #ffffff;
+}
+
+/* ==========================================================================
+   実績セクションのレスポンシブ対応
+   ========================================================================== */
+@media (max-width: 768px) {
+    .testimonials-flex {
+        flex-direction: column;
+    }
+    .stats-box, .voices-box {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   いろはラボの強みセクション
+   ========================================================================== */
+.features-section {
+    padding: 100px 20px;
+    background-color: #0a192f; /* 元の引き締まった深いネイビー */
+    text-align: center;
+}
+
+.features-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-lead {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-top: -40px;
+    margin-bottom: 60px;
+}
+
+/* 3つの強みを横並びにするグリッド（スマホ時は縦並び） */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* 立体感のある強み提示ボックス */
+.feature-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 50px 30px 40px 30px;
+    position: relative;
+    text-align: left; /* テキストは左揃えで信頼感を演出 */
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* アイコンと数字バッジの配置構造 */
+.feature-icon-wrap {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 28px;
+}
+
+.feature-main-icon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+/* 「01」「02」などの小さな数字バッジ */
+.feature-badge {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #00d2ff;
+    background-color: rgba(0, 210, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+.feature-box h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    letter-spacing: 0.03em;
+}
+
+.feature-box p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   強みセクションのレスポンシブ対応
+   ========================================================================== */
+@media (max-width: 768px) {
+    .feature-box {
+        padding: 40px 24px 30px 24px;
+    }
+}
+
+/* ==========================================================================
+   ご利用の流れ ＆ 費用の目安セクション
+   ========================================================================== */
+.process-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #0a192f 0%, #0d1e3d 100%);
+    text-align: center;
+}
+
+.process-container {
+    max-width: 800px; /* 読みやすさのために中央に少し細めて配置 */
+    margin: 0 auto;
+}
+
+/* タイムライン全体の縦線 */
+.timeline {
+    position: relative;
+    margin: 60px auto;
+    padding-left: 40px; /* 左側に線を寄せるスタイル */
+    text-align: left;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 各ステップの配置 */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* タイムラインの数字丸バッジ */
+.timeline-number {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 32px;
+    height: 32px;
+    background-color: #00d2ff;
+    color: #0a192f;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px 30px;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* --- 費用の目安スタイル --- */
+.price-area {
+    margin-top: 100px;
+}
+
+.price-title {
+    margin-bottom: 48px;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.price-box {
+    background: rgba(0, 210, 255, 0.03);
+    border: 2px solid rgba(0, 210, 255, 0.2);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.price-box h4 {
+    font-size: 1.2rem;
+    color: #00d2ff;
+    margin-bottom: 16px;
+}
+
+.price-text {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.price-amount {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.price-sub {
+    display: block;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+/* 遅延追加 */
+.delay-4 { transition-delay: 0.9s; }
+
+/* スマホ用調整 */
+@media (max-width: 768px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   お問い合わせ／CTA ＆ フッターセクション
+   ========================================================================== */
+.cta-section {
+    padding: 120px 20px;
+    background: radial-gradient(circle at center, #1e3a8a 0%, #0a192f 100%); /* 中央から広がる光のような演出 */
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
+.cta-text {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    margin-bottom: 48px;
+}
+
+/* 巨大なCTAボタンのデザイン（自然に行動を促す設計） */
+.cta-btn-wrap {
+    margin-bottom: 40px;
+}
+
+.btn-final-contact {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 48px0px;
+    padding: 24px 40px;
+    border-radius: 50px; /* 押しやすさを感じる完全な丸角 */
+    background: linear-gradient(90deg, #00d2ff 0%, #00bcff 100%);
+    color: #0a192f;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(0, 210, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-final-contact strong {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.btn-final-contact span {
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.btn-final-contact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 210, 255, 0.6);
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+}
+
+/* 電話・メールの窓口デザイン */
+.cta-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+.channel-icon {
+    font-size: 1.2rem;
+    color: #00d2ff;
+}
+
+/* --- フッターのスタイル --- */
+.main-footer {
+    padding: 60px 20px;
+    background-color: #061121; /* 最も深いネイビー */
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    margin-bottom: 32px;
+}
+
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* 横並びのフッターメニュー */
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.footer-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #00d2ff;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 24px;
+}
+
+/* スマホ用調整 */
+@media (max-width: 768px) {
+    .btn-final-contact {
+        padding: 20px 24px;
+    }
+    .btn-final-contact strong {
+        font-size: 1.2rem;
+    }
+    .footer-nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+/* ==========================================================================
+   【総仕上げ】常時固定ヘッダーナビゲーション
+   ========================================================================== */
+.main-header {
+    position: fixed; /* 画面の上部に固定する魔法の命令 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(10, 25, 47, 0.85); /* 背景を少しだけ透けさせておしゃれに */
+    backdrop-filter: blur(10px); /* 後ろの背景をぼかす最新のエフェクト */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 100; /* 他のどの要素よりも一番手前に表示する */
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between; /* ロゴとメニューを左右の端にわける */
+    align-items: center;
+}
+
+.header-logo a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* メニュー同士の間隔 */
+}
+
+.header-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #00d2ff;
+}
+
+/* ヘッダー右端の小さな目立つCTAボタン */
+.header-nav a.header-cta-btn {
+    background-color: #00d2ff;
+    color: #0a192f;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.header-nav a.header-cta-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ヘッダーが固定されるため、最初のメインビジュアルが上に隠れないように隙間をあける調整 */
+.hero-section {
+    padding-top: 130px !important; 
+}
+
+/* スマホ用：メニューが多くて崩れないようにスッキリさせる調整 */
+@media (max-width: 768px) {
+    .header-nav a:not(.header-cta-btn) {
+        display: none; /* スマホでは「無料相談」ボタンだけをすっきり残す */
+    }
+}
