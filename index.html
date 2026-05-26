@@ -3,258 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>いろはラボ - メインビジュアル</title>
+    <title>いろはラボ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="main-header">
+    <header>
         <div class="header-container">
-            <div class="header-logo">
-                <a href="#">いろはラボ</a>
-            </div>
-            <nav class="header-nav">
+            <h1>いろはラボ</h1>
+            <nav>
+                <a href="#about">私たちについて</a>
                 <a href="#services">サービス</a>
-                <a href="#testimonials">実績・声</a>
-                <a href="#features">強み</a>
-                <a href="#process">流れ・費用</a>
-                <a href="#contact" class="header-cta-btn">無料相談</a>
+                <a href="#contact" class="btn-blue">無料相談</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-container">
+    <section class="main-visual">
+        <div class="main-visual-content">
+            <h1>もっと豊かにデザインする場所。</h1>
+            <p>いろはラボは、あなたの理想を形にするクリエイティブパートナーです。最先端の技術とデザインで、新しい価値を共に創り出します。</p>
+            <a href="#services" class="btn-main">サービスを見る</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>提供サービス</h2>
+        <div class="service-container">
             
-            <div class="hero-content fade-in-up">
-                <h1 class="hero-title">
-                    あなたの「働く」と「生きる」を、<br>
-                    もっと豊かにデザインする場所。
-                </h1>
-                <p class="hero-subtitle">
-                    いろはラボは、一人ひとりのキャリアの可能性を広げ、<br>
-                    共に学び、未来を切り拓く創造的なコミュニティです。
-                </p>
+            <div class="service-card">
+                <h3>個人向けサービス</h3>
+                <p>ライフスタイルに合わせた個別カリキュラムで、あなたの「学びたい」を徹底サポートします。初心者でも安心してスキルを身につけられます。</p>
+                <a href="#" class="more-link">詳しく見る →</a>
             </div>
 
-            <div class="hero-actions fade-in-up delay-1">
-                <a href="#personal" class="btn btn-primary">
-                    <span>個人の方向け</span>
-                    <strong>キャリア相談・学びの場を見る</strong>
-                </a>
-                <a href="#corporate" class="btn btn-secondary">
-                    <span>企業の方向け</span>
-                    <strong>人材育成・研修を相談する</strong>
-                </a>
+            <div class="service-card">
+                <h3>企業向けサービス</h3>
+                <p>業務効率化や新規事業立ち上げのための、最適なソリューションとデジタルインフラをご提案。確実な成果へと導くパートナーシップを築きます。</p>
+                <a href="#" class="more-link">詳しく見る →</a>
+            </div>
+
+            <div class="service-card">
+                <h3>サポーター募集</h3>
+                <p>いろはラボの理念に共感し、共に未来を創るサポーターを募集しています。コミュニティを通じて、新しい繋がりと挑戦の場を提供します。</p>
+                <a href="#" class="more-link">詳しく見る →</a>
             </div>
 
         </div>
     </section>
 
-<section class="services-section" id="services">
-        <div class="services-container">
-            <h2 class="section-title fade-in-up">サービス案内</h2>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in-up delay-1">
-                    <div class="service-icon">👤</div>
-                    <h3>個人の方へ</h3>
-                    <p>転職・キャリア相談、就活支援など、あなたらしい生き方をサポートします。</p>
-                    <a href="#personal-detail" class="service-link">詳しく見る →</a>
-                </div>
-
-                <div class="service-card fade-in-up delay-2">
-                    <div class="service-icon">🏢</div>
-                    <h3>企業の方へ</h3>
-                    <p>人材育成・組織開発、各種研修など、企業の成長に伴走するプランをご提案します。</p>
-                    <a href="#corporate-detail" class="service-link">詳しく見る →</a>
-                </div>
-
-                <div class="service-card fade-in-up delay-3">
-                    <div class="service-icon">🤝</div>
-                    <h3>キャリア支援者の方へ</h3>
-                    <p>月例勉強会やコミュニティを通じて、共に学び高め合うネットワークを提供します。</p>
-                    <a href="#supporter-detail" class="service-link">詳しく見る →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section class="testimonials-section" id="testimonials">
-        <div class="testimonials-container">
-            <h2 class="section-title fade-in-up">実績と参加者の声</h2>
-            
-            <div class="testimonials-flex">
-                <div class="stats-box fade-in-up delay-1">
-                    <h3>確かな支援実績</h3>
-                    <div class="stat-item">
-                        <span class="stat-number">300</span>
-                        <span class="stat-unit">名以上</span>
-                        <p class="stat-label">個別キャリアカウンセリング実績</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">95</span>
-                        <span class="stat-unit">%</span>
-                        <p class="stat-label">月例勉強会・研修 満足度</p>
-                    </div>
-                </div>
-
-                <div class="voices-box">
-                    <div class="voice-card fade-in-up delay-2">
-                        <div class="quote-mark">“</div>
-                        <p class="voice-text">相談前はやりがいが見出せず悩んでいましたが、自分の強みを言語化してもらい、自信を持って次のステップへ進めるようになりました！（30代・個人相談）</p>
-                    </div>
-                    <div class="voice-card fade-in-up delay-3">
-                        <div class="quote-mark">“</div>
-                        <p class="voice-text">組織開発の研修を依頼しました。従業員のエンゲージメントが目に見えて向上し、社内のコミュニケーションが非常に活発になりました。（企業研修 担当者様）</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="more-link-area fade-in-up delay-3">
-                <a href="#all-voices" class="btn-more">もっと利用者の声を見る →</a>
-            </div>
-        </div>
-    </section>
-
-<section class="features-section" id="features">
-        <div class="features-container">
-            <h2 class="section-title fade-in-up">いろはラボの強み</h2>
-            <p class="section-lead fade-in-up">私たちが選ばれる、3つの理由があります。</p>
-            
-            <div class="features-grid">
-                <div class="feature-box fade-in-up delay-1">
-                    <div class="feature-icon-wrap">
-                        <span class="feature-badge">01</span>
-                        <div class="feature-main-icon">🎓</div>
-                    </div>
-                    <h3>経験豊富な<br>キャリアコンサルタント</h3>
-                    <p>確かな専門知識と豊富な相談実績を持つプロフェッショナルが、あなた自身の「声」に深く寄り添い伴走します。</p>
-                </div>
-
-                <div class="feature-box fade-in-up delay-2">
-                    <div class="feature-icon-wrap">
-                        <span class="feature-badge">02</span>
-                        <div class="feature-main-icon">🌟</div>
-                    </div>
-                    <h3>個人・企業の双方を<br>対象にした多様な実績</h3>
-                    <p>個人のキャリア相談から、企業の組織開発・研修まで幅広くカバー。双方の視点を持つからこそできる多角的な支援が強みです。</p>
-                </div>
-
-                <div class="feature-box fade-in-up delay-3">
-                    <div class="feature-icon-wrap">
-                        <span class="feature-badge">03</span>
-                        <div class="feature-main-icon">🌱</div>
-                    </div>
-                    <h3>学び続ける<br>仲間のネットワーク</h3>
-                    <p>月例勉強会や独自のコミュニティ「いろはラボの仲間たち」が存在。一過性の相談で終わらず、共に成長し続けられる居場所があります。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section class="process-section" id="process">
-        <div class="process-container">
-            <h2 class="section-title fade-in-up">ご利用の流れ</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item fade-in-up delay-1">
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <h3>お問い合わせ</h3>
-                        <p>まずは専用フォームまたはメールから、お気軽にご連絡ください。2営業日以内にご返信いたします。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in-up delay-2">
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-content">
-                        <h3>無料相談・ヒアリング</h3>
-                        <p>現在の状況や目指したいゴール、課題に感じていることを丁寧にお聴きします。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in-up delay-3">
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <h3>ご提案</h3>
-                        <p>ヒアリング内容を基に、あなたや御社に最適なオリジナルプラン・研修内容をご提示します。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in-up delay-4">
-                    <div class="timeline-number">4</div>
-                    <div class="timeline-content">
-                        <h3>サービス開始</h3>
-                        <p>ご契約後、キャリアカウンセリングや企業研修など、実際のサポートをスタートします。</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="price-area fade-in-up delay-4">
-                <h2 class="section-title price-title">費用の目安</h2>
-                <div class="price-grid">
-                    <div class="price-box">
-                        <h4>個人向けサービス</h4>
-                        <p class="price-text">個別キャリア相談（60分）</p>
-                        <p class="price-amount">初回無料 <span class="price-sub">（2回目以降：11,000円〜/回）</span></p>
-                    </div>
-                    <div class="price-box">
-                        <h4>企業向けサービス</h4>
-                        <p class="price-text">人材育成・組織開発研修</p>
-                        <p class="price-amount">御見積り <span class="price-sub">（事前ヒアリング・ご提案は無料）</span></p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-<section class="cta-section" id="contact">
-        <div class="cta-container">
-            <h2 class="cta-title fade-in-up">あなたの新しい一歩を、<br>ここから共に。</h2>
-            <p class="cta-text fade-in-up">現在の悩み、目指したい未来、研修のご相談など、まずはお気軽にお聴かせください。</p>
-            
-            <div class="cta-btn-wrap fade-in-up delay-1">
-                <a href="https://example.com/form" class="btn-final-contact">
-                    <strong>無料相談はこちらから</strong>
-                    <span>（お問い合わせフォームが開きます）</span>
-                </a>
-            </div>
-
-            <div class="cta-channels fade-in-up delay-2">
-                <div class="channel-item">
-                    <span class="channel-icon">📞</span>
-                    <span>お電話：000-000-0000（受付: 平日10:00〜18:00）</span>
-                </div>
-                <div class="channel-item">
-                    <span class="channel-icon">✉</span>
-                    <span>メール：info@iroha-labo.com（24時間受付）</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <span class="footer-logo">いろはラボ</span>
-                <p>働くこと・生きることをデザインするキャリア相談・研修サービス</p>
-            </div>
-            
-            <ul class="footer-nav">
-                <li><a href="#">トップ</a></li>
-                <li><a href="#services">サービス案内</a></li>
-                <li><a href="#testimonials">実績・参加者の声</a></li>
-                <li><a href="#features">いろはラボの強み</a></li>
-                <li><a href="#process">ご利用の流れ</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-            
-            <p class="copyright">&copy; 2026 いろはラボ. All Rights Reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; 2026 いろはラボ All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
