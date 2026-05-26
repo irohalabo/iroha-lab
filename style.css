@@ -1,4 +1,4 @@
-/* 全体のリセット（余計な隙間をなくし、プロのフォントに設定） */
+/* 全体のリセット設定 */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,10 +9,10 @@ body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
     background-color: #0b132b; /* スタイリッシュなダークネイビー */
     color: #ffffff;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* ヘッダーの配置を綺麗に中央寄せ・左右均等にする */
+/* ヘッダー全体のデザイン */
 header {
     background-color: #080f21;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -30,16 +30,23 @@ header {
     padding: 20px 24px;
 }
 
-header h1 {
+header h1.logo {
     font-size: 22px;
     font-weight: bold;
+    white-space: nowrap; /* 文字の折り返しを防ぐ */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
 }
 
 header nav a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 24px;
-    font-size: 15px;
+    margin-left: 20px;
+    font-size: 14px;
+    white-space: nowrap; /* 文字が途中で切れるのを防ぐ */
     transition: color 0.3s;
 }
 
@@ -47,29 +54,31 @@ header nav a:hover {
     color: #00b4d8;
 }
 
-/* 右上の無料相談ボタン */
+/* 無料相談ボタン（絶対に形が崩れないように設定） */
 header nav a.btn-blue {
     background-color: #00b4d8;
-    color: #ffffff;
-    padding: 8px 18px;
+    color: #ffffff !important;
+    padding: 8px 16px;
     border-radius: 20px;
     font-weight: bold;
+    display: inline-block;
+    text-align: center;
 }
 
 header nav a.btn-blue:hover {
     background-color: #0096c7;
 }
 
-/* メインビジュアルを中央にどっしり配置（文字幅を制限して読みやすく） */
+/* メインビジュアル（中央寄せ） */
 .main-visual {
-    padding: 100px 24px;
+    padding: 120px 24px;
     background: radial-gradient(circle at top, #1c2541 0%, #0b132b 100%);
     text-align: center;
 }
 
 .main-visual-content {
-    max-width: 700px;
-    margin: 0 auto; /* 中央寄せ */
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 .main-visual h1 {
@@ -85,7 +94,6 @@ header nav a.btn-blue:hover {
     margin-bottom: 32px;
 }
 
-/* メインボタン */
 .btn-main {
     display: inline-block;
     background-color: #ffffff;
@@ -96,21 +104,21 @@ header nav a.btn-blue:hover {
     text-decoration: none;
 }
 
-/* サービス案内（3つのボックスをきれいに均等に並べる） */
-.services-section {
+/* コンテナ設定（文章の長さを綺麗に揃える幅制限） */
+.section-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 24px;
 }
 
-.services-section h2 {
+h2 {
     text-align: center;
     font-size: 28px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+    font-weight: bold;
 }
 
-/* タイトルの下のオシャレな青い下線 */
-.services-section h2::after {
+h2::after {
     content: '';
     display: block;
     width: 40px;
@@ -120,22 +128,29 @@ header nav a.btn-blue:hover {
     border-radius: 2px;
 }
 
-/* 3つのカードを自動で均等に並べる魔法のコード（レスポンシブ対応） */
+.center-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #e2e8f0;
+    font-size: 16px;
+}
+
+/* サービスカード（グリッド配置） */
 .service-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    gap: 28px;
 }
 
-/* 各ボックス（カード）のデザイン */
 .service-card {
-    background-color: #1c2541; /* 立体感を出す少し明るい紺 */
+    background-color: #1c2541;
     padding: 32px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 中身の文章の長さがバラバラでもボタンの位置を揃える */
+    justify-content: space-between;
 }
 
 .service-card h3 {
@@ -148,9 +163,9 @@ header nav a.btn-blue:hover {
     font-size: 15px;
     color: #e2e8f0;
     margin-bottom: 24px;
+    text-align: justify; /* 両端揃えでプロっぽく見せる */
 }
 
-/* 詳しく見るボタンをオシャレに */
 .more-link {
     display: block;
     text-align: center;
@@ -178,16 +193,36 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* スマートフォン用の微調整 */
-@media (max-width: 768px) {
+/* ========================================================
+   📱 スマートフォン画面専用の崩れ防止設定
+======================================================== */
+@media (max-width: 600px) {
+    /* スマホではヘッダーの要素を上下2段にしてボタンの破裂を防ぐ */
     .header-container {
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
+        padding: 16px 12px;
     }
+    
+    header nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
     header nav a {
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 13px;
     }
+    
+    header nav a.btn-blue {
+        padding: 6px 12px; /* スマホ用に少しコンパクトにして綺麗に収める */
+    }
+
+    .main-visual {
+        padding: 80px 16px;
+    }
+
     .main-visual h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
 }
